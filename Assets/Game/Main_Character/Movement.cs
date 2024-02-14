@@ -34,6 +34,7 @@ public class Movement : MonoBehaviour
             fallspeed = jumpvalue;
         }
 
+
         // fallspeed becomes fallspeed - gravity times time.deltatime
         fallspeed -= gravity * Time.deltaTime;
         //the bool grounded is active when the raycast shoots down 2 meters and checks if the layer ground is there
