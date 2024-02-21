@@ -8,9 +8,9 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
    public LayerMask mask;
-   private void attack()
+    private void attack()
     {
-    
 
 
+    }
 }
