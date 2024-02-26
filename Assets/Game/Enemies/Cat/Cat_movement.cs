@@ -6,14 +6,30 @@ using UnityEngine.AI;
 
 public class Cat_movement : MonoBehaviour
 {
-    public Transform Player;
-    NavMeshAgent agent;
 
-    // Update is called once per frame
-    void Update()
+    NavMeshAgent agent;
+    public Transform Player, spawn;
+
+
+    private void Start()
     {
 
-        agent = GetComponent<NavMeshAgent>();
-        agent.destination = Player.position;
+
+    }
+
+    private void Update()
+    {
+        RaycastHit hit;
+
+
+        if (Physics.Linecast(transform.position, Player.position))
+        {
+            agent.destination = spawn.position;
+            
+        }
+        else
+        {
+            agent.destination = Player.position;
+        }
     }
 }

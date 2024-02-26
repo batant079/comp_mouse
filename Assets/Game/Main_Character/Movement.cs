@@ -68,4 +68,17 @@ public class Movement : MonoBehaviour
         // the cams localrotation equal to quaternion and turn the quaternion into a euler and the asigns the rotation to X
         Cam.localRotation = Quaternion.Euler(rotationY, 0, 0);
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("hideable"))
+        {
+            print("sus");
+
+        }
+
+
+    }
+
 }
