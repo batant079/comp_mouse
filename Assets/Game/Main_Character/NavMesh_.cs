@@ -19,7 +19,7 @@ public class NavMesh_ : MonoBehaviour
     void Update()
     {
         NavMeshHit hit;
-        bool navigering = NavMesh.SamplePosition(player.position, out hit, 0.6f, NavMesh.AllAreas);
+        bool navigering = NavMesh.SamplePosition(player.position, out hit, 1f, NavMesh.AllAreas);
 
 
         print(navigering);
