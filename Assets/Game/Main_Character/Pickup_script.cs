@@ -15,6 +15,7 @@ public class Pickup_script : MonoBehaviour
     public RaycastHit hit;
     public int timed = 0;
     bool candrop;
+    
 
     private void Start()
     {
@@ -42,7 +43,7 @@ public class Pickup_script : MonoBehaviour
         }
        
 
-        if(ispicked )
+        if(ispicked)
         {
             obj.position = player.transform.position;
             obj.rotation = player.transform.rotation;
