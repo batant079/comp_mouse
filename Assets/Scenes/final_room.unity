@@ -586,6 +586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Agent: {fileID: 408505203}
   player: {fileID: 391747900}
+  place: {fileID: 0}
 --- !u!1 &477102959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,13 +1140,18 @@ PrefabInstance:
       objectReference: {fileID: 658952730}
     - target: {fileID: 9073534546990417114, guid: 1b0845e065c414d459ce03e134a1b3a4,
         type: 3}
+      propertyPath: gravity
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073534546990417114, guid: 1b0845e065c414d459ce03e134a1b3a4,
+        type: 3}
       propertyPath: fallspeed
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9073534546990417114, guid: 1b0845e065c414d459ce03e134a1b3a4,
         type: 3}
       propertyPath: jumpvalue
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9073534546990417115, guid: 1b0845e065c414d459ce03e134a1b3a4,
         type: 3}
