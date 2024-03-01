@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+
     public float moveZ, moveX, gravity, fallspeed, jumpvalue;
-    public LayerMask whatisground, picked;
+    public LayerMask whatisground,picked;
     public bool grounded;
     public float rotatespeed;
     public float rotationX, rotationY = 0;
@@ -14,7 +15,8 @@ public class Movement : MonoBehaviour
     Vector3 movedir;
     public float movsped;
     public Transform Cam;
-    
+
+
     private void Start()
     {
         // makes so that the cursor is not visible in the game
@@ -36,12 +38,10 @@ public class Movement : MonoBehaviour
             fallspeed = jumpvalue;
         }
 
-        
-
         // fallspeed becomes fallspeed - gravity times time.deltatime
         fallspeed -= gravity * Time.deltaTime;
         //the bool grounded is active when the raycast shoots down 2 meters and checks if the layer ground is there
-        if(Physics.Raycast(transform.position, Vector3.down, 2, whatisground ))
+        if(Physics.Raycast(transform.position, Vector3.down, 2, whatisground))
         {
             grounded = true;
         }
@@ -51,14 +51,12 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            grounded = false;
+            grounded= false;
         }
 
 
-
         // if grounded and the fallspeed is less than 0 fallspeed is equal to 0
-        if (grounded && fallspeed < 0) 
-        { fallspeed = 0f; }
+        if (grounded && fallspeed < 0) { fallspeed = -4f; }
         //makes the character that the controler sits on move fallspeed times time.deltatime
         control.Move(new Vector3(0, fallspeed * Time.deltaTime, 0));
     }
@@ -86,8 +84,4 @@ public class Movement : MonoBehaviour
         // the cams localrotation equal to quaternion and turn the quaternion into a euler and the asigns the rotation to X
         Cam.localRotation = Quaternion.Euler(rotationY, 0, 0);
     }
-
-
-   
-
 }

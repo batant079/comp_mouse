@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class NavMesh_ : MonoBehaviour
 {
 
-    NavMeshAgent Agent;
-   public Transform player, place;
+   public NavMeshAgent Agent;
+    public Transform player,place;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class NavMesh_ : MonoBehaviour
     void Update()
     {
         NavMeshHit hit;
-        bool navigering = NavMesh.SamplePosition(player.position, out hit, 1f, NavMesh.AllAreas);
+        bool navigering = NavMesh.SamplePosition(player.position, out hit, 2f, NavMesh.AllAreas);
 
 
         print(navigering);
