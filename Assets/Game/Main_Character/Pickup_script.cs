@@ -23,8 +23,9 @@ public class Pickup_script : MonoBehaviour
     }
     private void Update()
     {
-        ispickable = Physics.Raycast(transform.position, Vector3.forward, out hit,220f, layered);
-       
+        ispickable = Physics.Raycast(transform.position, Vector3.forward, out hit,2f, layered);
+
+        print(ispickable);
 
 
         if(ispickable && Input.GetKeyDown(KeyCode.E) && ispicked == false )

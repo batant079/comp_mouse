@@ -11,23 +11,19 @@ public class inheritor : MonoBehaviour
 
     public void thing()
     {
-        print("sauce");
+       
         GameObject played = GameObject.Find("Main Character");
-        print("balls");
+     
         player = played.GetComponent<Transform>();
-        print("real");
+       
         Agent = GetComponent<NavMeshAgent>();
-        print("sus");
+       
         GameObject placed = GameObject.Find("place");
         place = placed.GetComponent<Transform>(); 
     }
 
     public void enemyMov()
     {
-
-
-
-
         NavMeshHit hit;
         bool navigering = NavMesh.SamplePosition(player.position, out hit, 2f, NavMesh.AllAreas);
         print(navigering);
@@ -41,7 +37,5 @@ public class inheritor : MonoBehaviour
         {
             Agent.destination = place.position;
         }
-
-
     }
 }

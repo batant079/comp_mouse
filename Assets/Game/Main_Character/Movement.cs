@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Movement : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class Movement : MonoBehaviour
     Vector3 movedir;
     public float movsped;
     public Transform Cam;
+
 
 
     private void Start()
@@ -84,4 +87,19 @@ public class Movement : MonoBehaviour
         // the cams localrotation equal to quaternion and turn the quaternion into a euler and the asigns the rotation to X
         Cam.localRotation = Quaternion.Euler(rotationY, 0, 0);
     }
+
+    public void restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("enem"))
+        {
+            restart();
+        }
+    }
+
+
 }
